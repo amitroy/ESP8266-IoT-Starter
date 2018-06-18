@@ -1,0 +1,47 @@
+.ui-page {
+    background: #059 !important;
+}
+
+.master-container {
+    width: 90%;
+    margin: 20px auto 0px;
+    border: 1px solid #e3e3e3;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.master-header {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #005499;
+    text-align: right;
+}
+
+.button-container {
+    margin: 10px 0px 10px 0px;
+    padding: 20px 20px;
+    border: 1px solid #e3e3e3;
+}
+
+.button-container button {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 5px;
+}
+
+.slider-container {
+    margin: 0px auto 0px;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.4em;
+    border: 1px solid #e3e3e3;
+}
+
+.slider-container #set-brightness {
+    margin-top: 20px;
+    width: 100%;
+    font-size: 0.75em;
+    font-weight: normal;
+    padding: 20px;
+}

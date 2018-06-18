@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AROY_IOT | ESP8622-01 | LED Remote Controller</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#slider-fill").change((data) => {
+                $.post(
+                    "https://iz7g8bf4t4.execute-api.us-east-1.amazonaws.com/exp/v1/api/led-state",
+                    JSON.stringify({
+                        enableLED: true,
+                        brightness: data.target.value
+                    }),
+                    function (response) {});
+            })
+            $("#btn-on").click(function (event) {
+                $.post("https://iz7g8bf4t4.execute-api.us-east-1.amazonaws.com/exp/v1/api/led-state",
+                    JSON.stringify({
+                        enableLED: true,
+                        brightness: $("#slider-fill").val()
+                    }),
+                    function (response) {});
+            });
+            $("#btn-off").click(function (event) {
+                $.post("https://iz7g8bf4t4.execute-api.us-east-1.amazonaws.com/exp/v1/api/led-state",
+                    JSON.stringify({
+                        enableLED: false
+                    }),
+                    function (response) {});
+            });
+            $("#set-brightness").click(function (event) {
+                $.post("https://iz7g8bf4t4.execute-api.us-east-1.amazonaws.com/exp/v1/api/led-state",
+                    JSON.stringify({
+                        enableLED: true,
+                        brightness: $("#slider").slider("value")
+                    }),
+                    function (response) {});
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div class="master-container">
+        <div class="master-header ui-icon-cloud">IoT Control Panel</div>
+        <div class="button-container">
+            <div>On/Off Controls</div>
+            <button class="ui-btn ui-shadow ui-btn-icon-left ui-icon-check" id="btn-on">
+                Turn on
+            </button>
+            <button class="ui-btn ui-shadow ui-btn-icon-left ui-icon-delete" id="btn-off">
+                Turn off
+            </button>
+        </div>
+        <div class="slider-container">
+            <div>Brightness Control</div>
+            <input type="range" name="slider-fill" id="slider-fill" value="50" min="10" max="100" step="10" data-highlight="true">
+        </div>
+    </div>
+</body>
+
+</html>
