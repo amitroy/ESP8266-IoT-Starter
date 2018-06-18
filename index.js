@@ -1,3 +1,6 @@
+/*
+    AWS Lambda Code
+*/
 const mqtt = require('mqtt');
 const config = require('./config');
 
