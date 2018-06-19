@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+
     <title>IoT Starter | ESP8266(ESP01) | MQTT LED Controller</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
@@ -26,7 +30,7 @@
         </div>
         <div class="slider-container">
             <div>Brightness Control</div>
-            <input type="range" name="slider-fill" id="slider-fill" value="50" min="10" max="100" step="10" data-highlight="true">
+            <input type="range" name="slider-fill" id="slider-fill" value="50" min="1" max="100" data-highlight="true">
         </div>
     </div>
 </body>
